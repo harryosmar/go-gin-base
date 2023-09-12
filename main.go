@@ -8,7 +8,7 @@ import (
 func main() {
 	r := gin.Default()
 
-	userHandler := user.NewUserHandler(user.NewUserServiceDummy())
+	userHandler := user.NewUserHandler(user.NewUserServiceMySQL())
 
 	r.GET("/users", userHandler.List)
 	r.GET("/user/:id", userHandler.Detail)
