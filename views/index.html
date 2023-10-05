@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GO-GIN-BASE</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+        border: none;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        border: none;
+      }
+
+      label {
+        display: inline-block;
+        width: 150px;
+        text-align: left;
+        margin-right: 10px;
+      }
+
+      select,
+      textarea {
+        width: 100%;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <hr />
+    <table>
+      <tr>
+        <th><label for="provinsi">Provinsi:</label></th>
+        <td>
+          <select id="provinsi" name="provinsi">
+            <option value="provinsi1">== Pilih Salah Satu==</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th><label for="kabupatenkota">Kabupaten/Kota:</label></th>
+        <td>
+          <select id="kabupatenkota" name="kabupatenkota">
+            <option value="kabupaten1">== Pilih Salah Satu==</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th><label for="kecamatan">Kecamatan:</label></th>
+        <td>
+          <select id="kecamatan" name="kecamatan">
+            <option value="kecamatan1">== Pilih Salah Satu==</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th><label for="desa">Desa:</label></th>
+        <td>
+          <select id="desa" name="desa">
+            <option value="desa1">== Pilih Salah Satu==</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th><label for="alamat">Alamat Domisili:</label></th>
+        <td>
+          <textarea id="alamat" name="alamat" rows="4" cols="50"></textarea>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
