@@ -36,6 +36,9 @@ func ConnectDatabase() *gorm.DB {
 	}
 
 	database.AutoMigrate(&user.Provinces{})
+	database.AutoMigrate(&user.Regencies{})
+	database.AutoMigrate(&user.Districts{})
+	database.AutoMigrate(&user.Villages{})
 
 	return database
 

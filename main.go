@@ -21,7 +21,10 @@ func main() {
 
 	userHandler := user.NewUserHandler(user.NewUserServiceMySQL(database))
 
-	r.GET("/Provinces", userHandler.Index)
+	r.GET("/Provinces", userHandler.IndexProvinces)
+	r.GET("/Regencies", userHandler.IndexRegencies)
+	r.GET("/Districts", userHandler.IndexDistricts)
+	r.GET("/Villages", userHandler.IndexVillages)
 	r.GET("/users", userHandler.List)
 	r.GET("/user/:id", userHandler.Detail)
 	r.PUT("/user/:id", userHandler.Update)

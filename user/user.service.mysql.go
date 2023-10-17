@@ -3,6 +3,7 @@ package user
 import (
 	"context"
 	"errors"
+	"fmt"
 
 	"gorm.io/gorm"
 )
@@ -11,14 +12,44 @@ type UserServiceMySQL struct {
 	db *gorm.DB
 }
 
-func (u *UserServiceMySQL) Index(ctx context.Context) ([]Provinces, error) {
-	var provinces []Provinces //
+func (u *UserServiceMySQL) IndexProvinces(ctx context.Context) ([]Provinces, error) {
+	var provinces []Provinces
 
-	if err := u.db.Find(&provinces).Error; err != nil {
+	if err := u.db.Order("name asc").Find(&provinces).Error; err != nil {
 		return nil, err
 	}
-
+	fmt.Println(provinces)
 	return provinces, nil
+}
+
+func (u *UserServiceMySQL) IndexRegencies(ctx context.Context) ([]Regencies, error) {
+	var regencies []Regencies
+
+	if err := u.db.Order("name asc").Find(&regencies).Error; err != nil {
+		return nil, err
+	}
+	fmt.Println(regencies)
+	return regencies, nil
+}
+
+func (u *UserServiceMySQL) IndexDistricts(ctx context.Context) ([]Districts, error) {
+	var districts []Districts
+
+	if err := u.db.Order("name asc").Find(&districts).Error; err != nil {
+		return nil, err
+	}
+	fmt.Println(districts)
+	return districts, nil
+}
+
+func (u *UserServiceMySQL) IndexVillages(ctx context.Context) ([]Villages, error) {
+	var villages []Villages
+
+	if err := u.db.Order("name asc").Find(&villages).Error; err != nil {
+		return nil, err
+	}
+	fmt.Println(villages)
+	return villages, nil
 }
 
 func NewUserServiceMySQL(database *gorm.DB) *UserServiceMySQL {
