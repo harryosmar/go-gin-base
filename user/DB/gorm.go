@@ -35,7 +35,10 @@ func ConnectDatabase() *gorm.DB {
 		log.Fatalf("Error connecting to database: %s", err)
 	}
 
-	database.AutoMigrate(&user.UserModel{})
+	database.AutoMigrate(&user.Provinces{})
+	database.AutoMigrate(&user.Regencies{})
+	database.AutoMigrate(&user.Districts{})
+	database.AutoMigrate(&user.Villages{})
 
 	return database
 
